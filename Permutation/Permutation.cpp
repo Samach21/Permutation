@@ -7,8 +7,7 @@ int fac(int);
 
 int main()
 {
-    int N, k[MAX_VALUE];
-    char be[MAX_VALUE], af[MAX_VALUE]; ///////////////////////////////////////////
+    int N, k[100000];
     int *n = k;
     int all;
     int Nr;
@@ -35,7 +34,7 @@ int main()
     }
     all = fac(N);
     printf("ALL POSSIBLES: %d Event\n", all);
-    for (int f = 0; f < all; f++)
+    for (int f = 0; f < all / N; f++)
     {
         for (int m = 0; m < N; m++)
         {
@@ -57,6 +56,11 @@ int main()
         for (int l = 0; l < all; l++)
         {
 
+        }
+        if (f == (all / N) - 1 && Nr != N)
+        {
+            f = 0;
+            Nr++;
         }
         printf("\n");
     }
