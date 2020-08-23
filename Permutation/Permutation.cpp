@@ -1,13 +1,19 @@
 #include<stdio.h>
+#include <stdlib.h> 
+#include <time.h> 
+
+#define MAX 50000
 
 int fac(int);
-int loopN2(int, int);
+int random_num(int, int);
+char int_to_char(int);
 
 int main()
 {
     int N, k[8];
+    char be, af[MAX], ready[MAX];
     int *n = k;
-    int all;
+    int all, r_num;
     printf("INPUT N: ");
     if (scanf_s("%d", &N) != 1) {
         printf("ERROR\n");
@@ -31,12 +37,17 @@ int main()
     }
     all = fac(N);
     printf("ALL POSSIBLES: %d Event\n", all);
-    for (int f = 0; f < N; f++)
+    for (int f = 0; f < all; f++)
     {
-        if (N >= 2)
+        srand(time(0));
+        for (int op = 0; op < N; op++)
         {
-            loopN2(f, N);
+            r_num = random_num(0, N - 1);
+            be = int_to_char(k[r_num]);
+            af[op] += be;
         }
+        printf("\n%c\n", af[f]);
+        f = all - 1;
     }
 	return 0;
 }
@@ -51,19 +62,28 @@ int fac(int a)
     return result;
 }
 
-int loopN2(int re, int rN)
+int random_num(int lower, int upper)
 {
-    int tu = 0;
-    if (rN >= 3)
+    int num = (rand() % (upper - lower + 1)) + lower;
+    return num;
+}
+
+char int_to_char(int in)
+{
+    char ch;
+    switch (in)
     {
-       // loopN3(re, rN);
+    case 0: ch = '0'; break;
+    case 1: ch = '1'; break;
+    case 2: ch = '2'; break;
+    case 3: ch = '3'; break;
+    case 4: ch = '4'; break;
+    case 5: ch = '5'; break;
+    case 6: ch = '6'; break;
+    case 7: ch = '7'; break;
+    case 8: ch = '8'; break;
+    case 9: ch = '9'; break;
+    default: break;
     }
-    else
-    {
-        for (int i = 0; i < fac(rN); i++)
-        {
-            printf("%d ", re);
-        }
-    }
-    return 0;
+    return ch;
 }
