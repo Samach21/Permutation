@@ -42,7 +42,66 @@ int main()
         {
             n--;
         }
-        //////เลือกว่าทำทั้งหมด หรือลูป โดยสลับลำดับกัน
+        if (y == N - 1)
+        {
+            y = 0;
+        }
+        if (y == 0)
+        {
+            int a1 = k[y];
+            int a2 = k[y + 1];
+            k[y] = a2;
+            k[y + 1] = a1;
+        }
+        else if (y == 1)
+        {
+            int a1 = k[y];
+            int a2 = k[y + 1];
+            k[y] = a2;
+            k[y + 1] = a1;
+        }
+        else if (y == 2)
+        {
+            int a1 = k[y];
+            int a2 = k[y + 1];
+            k[y] = a2;
+            k[y + 1] = a1;
+        }
+        else if (y == 3)
+        {
+            int a1 = k[y];
+            int a2 = k[y + 1];
+            k[y] = a2;
+            k[y + 1] = a1;
+        }
+        else if (y == 4)
+        {
+            int a1 = k[y];
+            int a2 = k[y + 1];
+            k[y] = a2;
+            k[y + 1] = a1;
+        }
+        else if (y == 5)
+        {
+            int a1 = k[y];
+            int a2 = k[y + 1];
+            k[y] = a2;
+            k[y + 1] = a1;
+        }
+        else if (y == 6)
+        {
+            int a1 = k[y];
+            int a2 = k[y + 1];
+            k[y] = a2;
+            k[y + 1] = a1;
+        }
+        else if (y == 7)
+        {
+            int a1 = k[y];
+            int a2 = k[y + 1];
+            k[y] = a2;
+            k[y + 1] = a1;
+        }
         y++;
         g++;
     }
